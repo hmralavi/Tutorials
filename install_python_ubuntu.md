@@ -56,7 +56,7 @@ cd ./Python-3.8.13
 Before you install the software, make sure you test the system and optimize Python.
 
 ```bash
-./configure --enable-optimizations --with-ensurepip=install
+./configure --enable-optimizations --with-ensurepip=install --prefix=/home/<username>/<path-to-my-python-installations>/Python3.8.13
 ```
 
 Install Python: (make sure you're in the extracted folder)
