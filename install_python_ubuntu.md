@@ -2,49 +2,71 @@
 
 ## Step 1: Update the Package Repository & Install Supporting Software
 
+Update the package repository to ensure you get the latest available program version. Run the following command:
+
 `sudo apt update`
+
+compiling a package from source code requires additional software. Run the following command to install the required packages for Python:
 
 `sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget`
 
 ## Step 2: Download the Desired Version of Python Source Code
 
-Navigate to the official Python source code webpage and select the program version you want to install.
+Navigate to a folder that you want to download the python source into it:
 
-Use the wget command and the link above to download the newest release of Python Source Code:
+(Here, I'm using /tmp folder)
 
 `cd /tmp`
 
-`wget https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz`
+Navigate to the <a href="https://www.python.org/downloads/source/">official Python source code webpage</a> and copy the download link of the .tgz file.
+
+Use the wget command to download the desired release of Python Source Code: 
+
+(In this example I've used python3.8.13 but you can choose any version you need)
+
+
+`wget https://www.python.org/ftp/python/3.8.13/Python-3.8.13.tgz`
 
 extract Compressed Files:
 
-`tar -xf Python-3.12.1.tgz`
+`tar -xf Python-3.8.13.tgz`
 
 # Step 3: Install Python
 
 Navigate to the extracted folder:
 
-`cd ./Python-3.12.1`
+`cd ./Python-3.8.13`
 
 Before you install the software, make sure you test the system and optimize Python.
 
-`./configure --enable-optimizations`
+`./configure --enable-optimizations --with-ensurepip=install`
 
-Install Python:
+Install Python: (make sure you're in the extracted folder)
 
 `sudo make install`
 
-Verify Python Version:
+Python is installed now. Verify Python Version:
 
 `python3 --version`
 
+you should get 'Python 3.8.13' as output.
+
+
 # Step 4: Install Pip
 
-Python comes with an ensurepip module, which can install pip in a Python environment.
+Try to see if the pip is installed:
+
+`python3 -m pip --version`
+
+if pip is already install, you're good to go. 
+
+Otherwise, Python comes with an ensurepip module, which can install pip in a Python environment.
 
 `python3 -m ensurepip --upgrade`
 
 Upgrade pip:
 
 `python3 -m pip install --upgrade pip`
+
+Now pip should be installed.
 
