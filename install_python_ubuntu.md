@@ -39,7 +39,7 @@ Use the wget command to download the desired release of Python Source Code:
 wget https://www.python.org/ftp/python/3.8.13/Python-3.8.13.tgz
 ```
 
-extract Compressed Files:
+Extract the compressed Files:
 
 ```bash
 tar -xf Python-3.8.13.tgz
