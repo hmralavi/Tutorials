@@ -98,3 +98,19 @@ python3 -m pip install --upgrade pip
 
 Now pip should be installed.
 
+# Additional Notes
+
+## Need sqlite3 package?
+
+when building python from source, the sqlite3 package won't install automatically. To solve this issue we need to follow this instruction:
+
+- Before installing python (step 3) we need to install this package on ubuntu:
+  ```bash
+  sudo apt install libsqlite3-dev
+  ```
+- then in the step 3, use this:
+  ```bash
+  ./configure --enable-optimizations --enable-loadable-sqlite-extensions --with-ensurepip=install --prefix=/home/<username>/<path-to-my-python-installations>/Python3.8.13
+  ```
+- then `sudo make install` then follow the next steps already described.
+
