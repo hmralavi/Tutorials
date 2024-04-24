@@ -64,7 +64,7 @@ now save and close the texteditor and run this:
 source ~/.bashrc
 ```
 
-now close all terminals.
+now close all terminals. this is IMPORTANT to close the terminals so the added environmental paths get updatad.
 
 now open a new terminal and check if the gpu is detected by tensorflow:
 
