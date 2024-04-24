@@ -15,7 +15,7 @@ sudo apt update
 compiling a package from source code requires additional software. Run the following command to install the required packages for Python:
 
 ```bash
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev software-properties-common python3-dev libc6-dev tk-dev llvm libncursesw5-dev xz-utils liblzma-dev libedit-dev
 ```
 
 ## Step 2: Download the Desired Version of Python Source Code
@@ -99,18 +99,3 @@ python3 -m pip install --upgrade pip
 Now pip should be installed.
 
 # Additional Notes
-
-## Need sqlite3 package?
-
-when building python from source, the sqlite3 package won't install automatically. To solve this issue we need to follow this instruction:
-
-- Before installing python (step 3) we need to install this package on ubuntu:
-  ```bash
-  sudo apt install libsqlite3-dev
-  ```
-- then in the step 3, use this:
-  ```bash
-  ./configure --enable-optimizations --enable-loadable-sqlite-extensions --with-ensurepip=install --prefix=/home/<username>/<path-to-my-python-installations>/Python3.8.13
-  ```
-- then `sudo make install` then follow the next steps already described.
-
