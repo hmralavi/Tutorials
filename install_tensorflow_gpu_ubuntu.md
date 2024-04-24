@@ -25,7 +25,8 @@ in this case, to enable gpu for tensorflow, follow the next section.
 
 ## Enable GPU support
 
-for some reason, tensorflow cannot detect cuda libraries. so we need to add them to environmental variable.
+for some reason, tensorflow cannot detect cuda libraries (specially if your python environment is in a custom path).
+so we need to add cuda libraries to the system's environmental variables.
 
 to do so, run this in the terminal:
 
