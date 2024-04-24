@@ -39,13 +39,14 @@ you will get a path, something like this:
 
 copy it.
 
-no run this:
+now run this:
 
 ```bash
 gedit ~/.bashrc
 ```
 
-now add these line at the end of the ".bashrc"
+now add these line at the end of the ".bashrc":\
+(make sure to use your own path)
 
 ```
 # enable gpu support for tensorflow
@@ -68,7 +69,18 @@ now close all terminals.
 now open a new terminal and check if the gpu is detected by tensorflow:
 
 ```bash
-python3 -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
 if you followed the instructions correctly, the gpu support should be enabled for tensorflow now.
+
+## Additional Notes
+
+### Disable Tensorflow warnings:
+```python
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
+import tensorflow as tf
+print(tf.config.list_physical_devices("GPU"))
+```
