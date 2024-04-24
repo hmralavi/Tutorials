@@ -15,7 +15,20 @@ sudo apt update
 compiling a package from source code requires additional software. Run the following command to install the required packages for Python:
 
 ```bash
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev software-properties-common python3-dev libc6-dev tk-dev llvm libncursesw5-dev xz-utils liblzma-dev libedit-dev
+sudo apt install build-essential gcc make zlib1g-dev libncurses5-dev \
+libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev \
+wget libbz2-dev software-properties-common python3-dev libc6-dev tk-dev llvm \
+libncursesw5-dev xz-utils liblzma-dev libedit-dev libdb-dev libgdbm-compat-dev libdb-dev
+```
+
+more dependencies:
+
+```bash
+sudo apt install libxml2-dev libxslt1-dev libjpeg-dev libtiff-dev libpng-dev libfreetype6-dev \
+libopenblas-dev liblapack-dev libmysqlclient-dev libpq-dev \
+libgirepository1.0-dev libcairo2-dev libyaml-dev libzmq3-dev libldap2-dev \
+libsasl2-dev libevent-dev libmemcached-dev
+
 ```
 
 ## Step 2: Download the Desired Version of Python Source Code
